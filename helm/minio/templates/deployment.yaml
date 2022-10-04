@@ -58,7 +58,7 @@ spec:
       {{- if .Values.runtimeClassName }}
       runtimeClassName: "{{ .Values.runtimeClassName }}"
       {{- end }}
-{{- if and .Values.securityContext.enabled .Values.persistence.enabled }}
+{{- if .Values.securityContext.enabled }}
       securityContext:
         runAsUser: {{ .Values.securityContext.runAsUser }}
         runAsGroup: {{ .Values.securityContext.runAsGroup }}

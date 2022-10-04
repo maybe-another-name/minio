@@ -84,8 +84,8 @@ runtimeClassName: ""
 ## AccessKey and secretKey is generated when not set
 ## Distributed MinIO ref: https://docs.minio.io/docs/distributed-minio-quickstart-guide
 ##
-rootUser: ""
-rootPassword: ""
+rootUser: "rootuser"
+rootPassword: "rootpass123"
 
 ## Use existing Secret that store following variables:
 ##
@@ -114,7 +114,7 @@ bucketRoot: ""
 # Number of drives attached to a node
 drivesPerNode: 1
 # Number of MinIO containers running
-replicas: 16
+replicas: 2
 # Number of expanded MinIO clusters
 pools: 1
 
@@ -141,7 +141,7 @@ trustedCertsSecret: ""
 ## ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
 ##
 persistence:
-  enabled: true
+  enabled: false
   annotations: {}
 
   ## A manually managed Persistent Volume and Claim
@@ -359,7 +359,7 @@ makeUserJob:
   podAnnotations: {}
   annotations: {}
   securityContext:
-    enabled: false
+    enabled: true
     runAsUser: 1000
     runAsGroup: 1000
     fsGroup: 1000
@@ -403,7 +403,7 @@ makeBucketJob:
   podAnnotations: {}
   annotations: {}
   securityContext:
-    enabled: false
+    enabled: true
     runAsUser: 1000
     runAsGroup: 1000
     fsGroup: 1000
@@ -428,7 +428,7 @@ customCommandJob:
   podAnnotations: {}
   annotations: {}
   securityContext:
-    enabled: false
+    enabled: true
     runAsUser: 1000
     runAsGroup: 1000
     fsGroup: 1000
